@@ -20,6 +20,8 @@ public class Main {
 	static boolean buttonIsShowing;
 	static String actionElement;
 	static int waitForPageLoadSec = 5;
+	
+	static String userName = "", passWord = "";
 
 	public static void main(String[] args) throws InterruptedException {
 		
@@ -41,8 +43,8 @@ public class Main {
 		driver.get("http://guvenliqr.com/agent.auth");
 		
 		driver.manage().timeouts().implicitlyWait(waitForPageLoadSec, TimeUnit.SECONDS);
-		driver.findElement(By.xpath("//*[@id=\"auth-form\"]/div/div[1]/div/input")).sendKeys("Agent0511");
-		driver.findElement(By.xpath("//*[@id=\"auth-form\"]/div/div[2]/div/input")).sendKeys("rulokat");
+		driver.findElement(By.xpath("//*[@id=\"auth-form\"]/div/div[1]/div/input")).sendKeys(userName);
+		driver.findElement(By.xpath("//*[@id=\"auth-form\"]/div/div[2]/div/input")).sendKeys(passWord);
 		driver.findElement(By.xpath("//*[@id=\"planetsqr-content\"]/div/div/div/div/button[1]")).click();
 		
 	
